@@ -22,8 +22,8 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<DataContext>(options => options.UseSqlite("Data source=app.sqlite3"));
-            services.AddDbContext<DataContext>(options => options.UseSqlServer("Data source=.; Initial Catalog=app; Integrated security=true"));
+            services.AddDbContext<DataContext>(options => options.UseSqlite("Data source=appdb.sqlite3"));
+            //services.AddDbContext<DataContext>(options => options.UseSqlServer("Data source=.; Initial Catalog=appdb; Integrated security=true"));
 
             services.AddScoped<IUserService, UserService>();
 
