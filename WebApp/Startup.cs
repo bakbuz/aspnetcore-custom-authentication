@@ -29,7 +29,11 @@ namespace WebApp
 
             // Enable cookie authentication
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                    .AddCookie();
+                    .AddCookie(options =>
+                    {
+                        options.LoginPath = "/Account/Login";
+                        //options.LoginPath = "/auth/login";
+                    });
 
             services.AddHttpContextAccessor();
 
